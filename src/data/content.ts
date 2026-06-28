@@ -2,7 +2,10 @@ export const SLOGAN = 'La diversión es nuestro arte'
 
 export const PHONE = '+57 320 6537966'
 export const PHONE_HREF = 'tel:+573206537966'
-export const WHATSAPP = 'https://wa.me/573206537966'
+export const WHATSAPP_MESSAGE =
+  'Hola, me gustaría cotizar un evento con AlegrArte. ¿Podrían darme más información?'
+
+export const WHATSAPP = `https://wa.me/573206537966?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
 export const NAV_LINKS = [
   { label: 'Nosotros', href: '#about' },

@@ -24,23 +24,12 @@ export const HERO = {
   ctaSecondaryHref: '#about',
   image: 'https://i.postimg.cc/jdWhsPss/04.jpg',
   secondaryImage: 'https://i.postimg.cc/QxBqX1j4/eventos.jpg',
-  stats: [
-    { value: '500+', label: 'Eventos' },
-    { value: '10+', label: 'Años' },
-    { value: '4.9★', label: 'Valoración' },
-  ],
 }
 
 export const ABOUT = {
   headline: 'Quiénes somos',
   description:
     'Somos un equipo apasionado por transformar cada celebración en una experiencia única, donde la diversión, la integración y la felicidad son las protagonistas.',
-  image: 'https://i.postimg.cc/QxBqX1j4/eventos.jpg',
-  highlights: [
-    { value: '500+', label: 'Eventos realizados' },
-    { value: '10+', label: 'Años de experiencia' },
-    { value: '100%', label: 'Compromiso y calidad' },
-  ],
   mission: {
     title: 'Misión',
     text: 'En AlegrArte nos dedicamos a diseñar, organizar y desarrollar experiencias de animación, recreación y eventos que inspiren alegría, integración y bienestar. Brindamos un servicio innovador, seguro y personalizado para personas, empresas e instituciones, a través de un equipo humano comprometido, creativo y altamente capacitado, garantizando momentos memorables que superen las expectativas de nuestros clientes y contribuyan al fortalecimiento de los vínculos familiares, sociales y organizacionales.',

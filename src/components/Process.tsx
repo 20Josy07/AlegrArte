@@ -1,56 +1,60 @@
+import { ArrowRight, ClipboardList, MessageCircle, PartyPopper } from 'lucide-react'
 import { PROCESS } from '../data/content'
 import { SectionTitle } from './ui/shared'
 
-const colors = [
-  { bg: 'gradient-fun text-brand-dark', ring: 'ring-brand-yellow/40' },
-  { bg: 'bg-accent text-white', ring: 'ring-accent/40' },
-  { bg: 'bg-brand text-white', ring: 'ring-brand/40' },
-]
+const steps = [
+  { icon: MessageCircle, accent: 'from-brand-yellow to-yellow-light', iconBg: 'bg-brand-yellow/15 text-brand-dark' },
+  { icon: ClipboardList, accent: 'from-accent to-brand-yellow', iconBg: 'bg-accent/15 text-accent' },
+  { icon: PartyPopper, accent: 'from-brand to-brand-light', iconBg: 'bg-brand/10 text-brand' },
+] as const
 
 export function Process() {
   return (
-    <section className="section relative overflow-hidden bg-surface">
-      <div className="pointer-events-none absolute -right-32 top-0 h-80 w-80 rounded-full bg-brand-yellow/12 blur-3xl" />
-      <div className="pointer-events-none absolute -left-32 bottom-0 h-64 w-64 rounded-full bg-brand/8 blur-3xl" />
-
+    <section className="section relative overflow-hidden mesh-bg">
       <div className="container-main relative">
-        <SectionTitle label="Proceso" title={PROCESS.headline} align="center" emoji="✨" />
+        <SectionTitle label="Proceso" title={PROCESS.headline} align="center" />
 
-        <div className="relative mx-auto max-w-5xl">
-          <div className="absolute left-1/2 top-8 hidden h-[calc(100%-4rem)] w-1 -translate-x-1/2 rounded-full bg-gradient-to-b from-brand-yellow via-accent to-brand lg:block" />
+        <div className="grid gap-6 lg:grid-cols-3 lg:gap-0">
+          {PROCESS.steps.map((step, i) => {
+            const { icon: Icon, accent, iconBg } = steps[i]
+            const isLast = i === PROCESS.steps.length - 1
 
-          <div className="grid gap-6 lg:gap-8">
-            {PROCESS.steps.map((step, i) => {
-              const isEven = i % 2 === 0
-              const c = colors[i]
+            return (
+              <div key={step.number} className="relative flex lg:flex-col">
+                <article className="card-base relative flex flex-1 flex-col overflow-hidden p-7 lg:mx-3 lg:p-8">
+                  <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${accent}`} />
 
-              return (
-                <div
-                  key={step.number}
-                  className={`relative grid items-center gap-6 lg:grid-cols-[1fr_auto_1fr] lg:gap-10 ${
-                    isEven ? '' : 'lg:[&>*:first-child]:order-3 lg:[&>*:last-child]:order-1'
-                  }`}
-                >
-                  <div className={`${isEven ? 'lg:text-right' : 'lg:text-left'} text-center`}>
-                    <div className={`inline-block rounded-2xl border border-border bg-bg p-6 shadow-soft lg:max-w-sm ${isEven ? 'lg:ml-auto' : 'lg:mr-auto'}`}>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Paso {step.number}</span>
-                      <h3 className="mt-2 font-display text-xl font-bold text-text lg:text-2xl">{step.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted lg:text-base">{step.description}</p>
+                  <span className="pointer-events-none absolute -right-2 -top-4 font-display text-7xl font-extrabold leading-none text-brand/5 lg:text-8xl">
+                    {step.number}
+                  </span>
+
+                  <div className="relative">
+                    <div className="flex items-center gap-4">
+                      <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${iconBg}`}>
+                        <Icon size={22} strokeWidth={2} />
+                      </span>
+                      <span className="font-display text-sm font-bold text-accent">Paso {step.number}</span>
                     </div>
-                  </div>
 
-                  <div className={`relative z-10 mx-auto flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-2xl text-2xl shadow-elevated ring-4 ${c.bg} ${c.ring}`}>
-                    {step.emoji}
-                    <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-brand-dark text-[10px] font-bold text-brand-yellow">
-                      {i + 1}
+                    <h3 className="mt-5 font-display text-xl font-bold text-text lg:text-2xl">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted lg:text-base">
+                      {step.description}
+                    </p>
+                  </div>
+                </article>
+
+                {!isLast && (
+                  <div className="flex items-center justify-center py-2 lg:absolute lg:right-0 lg:top-1/2 lg:z-10 lg:-translate-y-1/2 lg:translate-x-1/2 lg:py-0">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface text-muted shadow-soft lg:h-10 lg:w-10">
+                      <ArrowRight size={16} className="rotate-90 lg:rotate-0" />
                     </span>
                   </div>
-
-                  <div className="hidden lg:block" />
-                </div>
-              )
-            })}
-          </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
-import { ArrowRight, MapPin, Sparkles } from 'lucide-react'
+import { ArrowRight, MapPin, Sparkles, PartyPopper } from 'lucide-react'
 import { HERO, WHATSAPP } from '../data/content'
-import { Button, FloatingEmoji } from './ui/shared'
+import { Button } from './ui/shared'
 
 export function Hero() {
   return (
@@ -11,11 +11,6 @@ export function Hero() {
       <div className="pointer-events-none absolute -right-24 top-1/4 h-80 w-80 rounded-full bg-brand-yellow/25 blur-[90px] animate-pulse-glow" />
       <div className="pointer-events-none absolute -left-24 bottom-1/3 h-72 w-72 rounded-full bg-accent/20 blur-[80px]" />
       <div className="pointer-events-none absolute right-1/3 top-16 h-32 w-32 rounded-full bg-brand-yellow/10 blur-2xl" />
-
-      <FloatingEmoji emoji="🎈" className="animate-float-gentle left-[8%] top-[18%] hidden md:block" />
-      <FloatingEmoji emoji="🎪" className="animate-float-slow right-[12%] top-[22%] hidden lg:block delay-200" />
-      <FloatingEmoji emoji="✨" className="animate-float-gentle bottom-[30%] left-[15%] hidden lg:block delay-300" />
-      <FloatingEmoji emoji="🎊" className="animate-float-slow right-[8%] bottom-[25%] hidden md:block" />
 
       <div className="container-main relative flex min-h-[inherit] flex-col justify-center pb-16 pt-4 lg:pb-24">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
@@ -34,7 +29,7 @@ export function Hero() {
             <h1 className="font-display text-[2.75rem] font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl xl:text-[4.75rem]">
               {HERO.headline}
               <br />
-              <span className="shimmer-text">{HERO.headlineHighlight}</span>
+              <span className="text-brand-yellow">{HERO.headlineHighlight}</span>
             </h1>
 
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/75">
@@ -54,18 +49,6 @@ export function Hero() {
                 <ArrowRight size={17} />
               </Button>
             </div>
-
-            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-4">
-              {HERO.stats.map((s, i) => (
-                <div
-                  key={s.label}
-                  className={`card-glass animate-in-scale p-4 text-center sm:p-5 ${['delay-100', 'delay-200', 'delay-300'][i]}`}
-                >
-                  <p className="font-display text-xl font-bold text-white sm:text-2xl lg:text-3xl">{s.value}</p>
-                  <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/50 sm:text-xs">{s.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="animate-in relative lg:col-span-6 lg:col-start-7 xl:col-span-7 delay-200">
@@ -81,7 +64,7 @@ export function Hero() {
                       className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
                     />
                   </div>
-                  <div className="col-span-5 flex flex-col gap-3 pb-2 lg:col-span-4">
+                  <div className="col-span-5 pb-2 lg:col-span-4">
                     <div className="overflow-hidden rounded-2xl shadow-lg ring-2 ring-white/20 lg:-rotate-2 lg:transition-transform lg:hover:rotate-0">
                       <img
                         src={HERO.secondaryImage}
@@ -89,26 +72,17 @@ export function Hero() {
                         className="aspect-[3/4] w-full object-cover"
                       />
                     </div>
-                    <div className="gradient-fun rounded-2xl p-4 shadow-lg shadow-yellow/30 lg:rotate-1">
-                      <p className="font-display text-2xl font-extrabold text-brand-dark lg:text-3xl">4.9★</p>
-                      <p className="mt-0.5 text-[11px] font-bold leading-snug text-brand-dark/75">
-                        127 familias nos recomiendan
-                      </p>
-                    </div>
                   </div>
                 </div>
 
                 <div className="animate-float-gentle absolute -bottom-3 -left-2 z-10 flex items-center gap-3 rounded-2xl bg-surface px-5 py-3.5 shadow-elevated ring-1 ring-border lg:-left-8 lg:bottom-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-yellow/20 text-xl">🎊</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-yellow/20 text-brand-dark">
+                    <PartyPopper size={20} />
+                  </span>
                   <div>
                     <p className="font-display text-sm font-bold text-text">Diversión garantizada</p>
                     <p className="text-xs text-muted">Animadores certificados</p>
                   </div>
-                </div>
-
-                <div className="absolute -right-2 top-8 z-10 hidden rounded-2xl bg-brand px-4 py-3 shadow-glow-purple lg:block lg:-right-6">
-                  <p className="font-display text-lg font-bold text-brand-yellow">+500</p>
-                  <p className="text-[10px] font-semibold uppercase tracking-wide text-white/70">Eventos</p>
                 </div>
               </div>
             </div>

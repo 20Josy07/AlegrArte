@@ -1,9 +1,9 @@
 export const SLOGAN = 'La diversión es nuestro arte'
 
-export const PHONE = '+57 300 123 4567'
-export const PHONE_HREF = 'tel:+573001234567'
+export const PHONE = '+57 320 6537966'
+export const PHONE_HREF = 'tel:+573206537966'
 export const EMAIL = 'hola@alegrarte.com'
-export const WHATSAPP = 'https://wa.me/573001234567'
+export const WHATSAPP = 'https://wa.me/573206537966'
 
 export const NAV_LINKS = [
   { label: 'Nosotros', href: '#about' },

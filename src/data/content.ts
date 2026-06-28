@@ -303,5 +303,5 @@ export const FOOTER = {
     address: 'Barranquilla, Colombia',
     hours: 'Lun – Sáb, 8:00 – 18:00',
   },
-  copyright: '© 2025 ALEGRARTE — La diversión es nuestro arte',
+  copyright: '© 2026 ALEGRARTE — La diversión es nuestro arte',
 }

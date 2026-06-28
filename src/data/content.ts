@@ -289,7 +289,7 @@ export const FAQ = {
     },
     {
       question: '¿Qué zonas cubren?',
-      answer: 'Bogotá y municipios cercanos. Consulta disponibilidad para otras ciudades de Colombia.',
+      answer: 'Barranquilla y municipios cercanos. Consulta disponibilidad para otras ciudades de Colombia.',
       defaultOpen: false,
     },
   ],
@@ -297,7 +297,7 @@ export const FAQ = {
 
 export const FOOTER = {
   description:
-    'Animación, recreación y organización de eventos en Colombia. La diversión es nuestro arte.',
+    'Animación, recreación y organización de eventos en Barranquilla. La diversión es nuestro arte.',
   services: [
     'Fiestas infantiles',
     'Eventos corporativos',
@@ -305,7 +305,7 @@ export const FOOTER = {
     'Decoración temática',
   ],
   contact: {
-    address: 'Bogotá, Colombia',
+    address: 'Barranquilla, Colombia',
     hours: 'Lun – Sáb, 8:00 – 18:00',
   },
   copyright: '© 2025 ALEGRARTE — La diversión es nuestro arte',

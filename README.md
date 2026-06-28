@@ -1,6 +1,6 @@
 # ALEGRARTE
 
-Landing page para **ALEGRARTE** — recreación y eventos en Bogotá.
+Landing page para **ALEGRARTE** — recreación y eventos en Barranquilla.
 
 ## Stack
 

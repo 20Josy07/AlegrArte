@@ -1,5 +1,5 @@
-import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
-import { SLOGAN, WHATSAPP, PHONE, PHONE_HREF, EMAIL } from '../data/content'
+import { MapPin, MessageCircle, Phone } from 'lucide-react'
+import { SLOGAN, WHATSAPP, PHONE, PHONE_HREF } from '../data/content'
 import { Button } from './ui/shared'
 
 export function ContactCTA() {
@@ -25,7 +25,6 @@ export function ContactCTA() {
               {[
                 { icon: MapPin, text: 'Barranquilla, Colombia' },
                 { icon: Phone, text: PHONE, href: PHONE_HREF },
-                { icon: Mail, text: EMAIL, href: `mailto:${EMAIL}` },
               ].map(({ icon: Icon, text, href }) => (
                 <div key={text} className="flex items-center gap-3 text-sm text-white/75">
                   <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10">
@@ -62,7 +61,6 @@ export function ContactCTA() {
                   {PHONE}
                 </Button>
               </div>
-              <p className="mt-6 text-center text-sm text-white/45 lg:text-left">{EMAIL}</p>
             </div>
           </div>
         </div>

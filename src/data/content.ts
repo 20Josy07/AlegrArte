@@ -2,7 +2,6 @@ export const SLOGAN = 'La diversión es nuestro arte'
 
 export const PHONE = '+57 320 6537966'
 export const PHONE_HREF = 'tel:+573206537966'
-export const EMAIL = 'hola@alegrarte.com'
 export const WHATSAPP = 'https://wa.me/573206537966'
 
 export const NAV_LINKS = [
@@ -138,7 +137,7 @@ export const SERVICES = {
     {
       title: 'Fiestas infantiles',
       description: 'Animación, juegos, personajes y decoración temática para cumpleaños inolvidables.',
-      image: 'https://images.unsplash.com/photo-1464349153735-7db50ed83c16?w=600&h=450&fit=crop&q=80',
+      image: 'https://i.postimg.cc/jdWhsPss/04.jpg',
       tag: 'Más popular',
       emoji: '🎈',
       accent: 'yellow',
@@ -209,7 +208,7 @@ export const PACKAGES = {
       features: [
         'Todo lo del Esencial',
         'Show de magia o personaje',
-        'Mesa de dulces decorada',
+        'Globoflexia o pinta caritas',
         'Photobooth con accesorios',
         'Coordinador de evento',
       ],
@@ -222,7 +221,7 @@ export const PACKAGES = {
       features: [
         'Todo lo de Celebración',
         'Decoración premium a medida',
-        'Catering y mesa de snacks',
+        'Zona recreativa o inflable',
         'Fotografía del evento',
         'Souvenirs personalizados',
       ],
@@ -258,7 +257,7 @@ export const GALLERY = {
   images: [
     { src: 'https://i.postimg.cc/jdWhsPss/04.jpg', alt: 'Evento AlegrArte', tall: true },
     { src: 'https://i.postimg.cc/QxBqX1j4/eventos.jpg', alt: 'Recreación y eventos', tall: false },
-    { src: 'https://images.unsplash.com/photo-1464366400600-7168b878af9b?w=600&h=400&fit=crop&q=80', alt: 'Mesa decorada', tall: false },
+    { src: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop&q=80', alt: 'Decoración de evento', tall: false },
     { src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=400&fit=crop&q=80', alt: 'Celebración exterior', tall: false },
     { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=750&fit=crop&q=80', alt: 'Fiesta nocturna', tall: true },
   ],

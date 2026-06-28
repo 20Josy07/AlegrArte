@@ -1,4 +1,4 @@
-import { FOOTER, PHONE, PHONE_HREF, EMAIL, NAV_LINKS, WHATSAPP, SLOGAN } from '../data/content'
+import { FOOTER, PHONE, PHONE_HREF, NAV_LINKS, WHATSAPP, SLOGAN } from '../data/content'
 import { Logo } from './ui/shared'
 
 export function Footer() {
@@ -37,7 +37,6 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-text">
               <li>{FOOTER.contact.address}</li>
               <li><a href={PHONE_HREF} className="hover:text-accent transition-colors">{PHONE}</a></li>
-              <li><a href={`mailto:${EMAIL}`} className="hover:text-accent transition-colors">{EMAIL}</a></li>
               <li className="text-muted">{FOOTER.contact.hours}</li>
             </ul>
           </div>

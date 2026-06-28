@@ -18,7 +18,7 @@ export function Hero() {
           <div className="animate-in lg:col-span-6 xl:col-span-5">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 backdrop-blur-md">
               <Sparkles size={14} className="text-brand-yellow" />
-              <span className="text-sm font-semibold text-white/90">{HERO.tag.replace('🎉 ', '')}</span>
+              <span className="text-sm font-semibold italic text-brand-yellow">{HERO.tag}</span>
             </div>
 
             <h1 className="font-display text-[2.65rem] font-bold leading-[1.02] tracking-tight text-white sm:text-6xl xl:text-[4.5rem]">
@@ -37,7 +37,7 @@ export function Hero() {
               </Button>
               <Button
                 variant="ghost"
-                href="#services"
+                href={HERO.ctaSecondaryHref}
                 className="border-white/20 bg-white/5 text-white backdrop-blur-sm hover:border-white/40 hover:bg-white/10 hover:text-white"
               >
                 {HERO.ctaSecondary}

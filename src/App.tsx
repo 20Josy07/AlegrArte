@@ -20,14 +20,16 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <WaveDivider className="-mt-1" />
         <Marquee />
+        <WaveDivider fill="fill-surface" />
         <About />
         <Values />
+        <WaveDivider flip fill="fill-bg" />
         <Services />
         <Process />
         <PackageCards />
         <Quality />
+        <WaveDivider fill="fill-surface" />
         <Testimonials />
         <Gallery />
         <FAQ />

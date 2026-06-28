@@ -32,6 +32,8 @@
   --shadow-soft: 0 4px 24px -4px rgba(92, 37, 129, 0.08);
   --shadow-card: 0 8px 32px -8px rgba(92, 37, 129, 0.12);
   --shadow-elevated: 0 20px 48px -12px rgba(61, 24, 88, 0.18);
+  --shadow-glow-yellow: 0 0 40px -8px rgba(253, 184, 13, 0.55);
+  --shadow-glow-purple: 0 0 60px -12px rgba(92, 37, 129, 0.45);
 }
 
 ::selection {
@@ -46,6 +48,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 { font-family: var(--font-display); }
@@ -63,9 +66,21 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .section { padding-block: 5.5rem; }
 @media (min-width: 1024px) { .section { padding-block: 7rem; } }
 
+.section-dark {
+  background: linear-gradient(145deg, #2A1045 0%, #5C2581 50%, #862785 100%);
+  color: white;
+}
+
 .dots-bg {
   background-image: radial-gradient(circle, #5C2581 1px, transparent 1px);
   background-size: 28px 28px;
+}
+
+.mesh-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(253, 184, 13, 0.12), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 90% 80%, rgba(92, 37, 129, 0.1), transparent 50%),
+    var(--color-bg);
 }
 
 .card-base {
@@ -73,22 +88,61 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   border-radius: 1.5rem;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.3s ease;
 }
 
 .card-base:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-card);
+  border-color: rgba(92, 37, 129, 0.15);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: 1.5rem;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #FDB80D, #F1890C, #5C2581);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.92) translateY(16px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 @keyframes float-gentle {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(3deg); }
+  66% { transform: translateY(4px) rotate(-2deg); }
 }
 
 @keyframes wiggle {
@@ -101,10 +155,34 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   to { transform: translateX(-50%); }
 }
 
-.animate-in { animation: fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to { background-position: 200% center; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-in { animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-in-scale { animation: fade-in-scale 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .animate-float-gentle { animation: float-gentle 5s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
 .animate-wiggle { animation: wiggle 2.5s ease-in-out infinite; }
-.animate-marquee { animation: marquee 28s linear infinite; }
+.animate-marquee { animation: marquee 24s linear infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
 
 .gradient-fun {
   background: linear-gradient(135deg, #FDB80D 0%, #F1890C 100%);
@@ -121,13 +199,20 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
   background-clip: text;
 }
 
+.text-gradient-purple {
+  background: linear-gradient(135deg, #7B3AA3, #F1890C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .section-label {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-accent);
 }
@@ -135,8 +220,35 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 .section-label::before {
   content: "";
   display: block;
-  width: 1.5rem;
-  height: 2px;
+  width: 1.75rem;
+  height: 3px;
   background: linear-gradient(90deg, #F1890C, #FDB80D);
   border-radius: 2px;
+}
+
+.section-label-light {
+  color: var(--color-brand-yellow);
+}
+
+.section-label-light::before {
+  background: linear-gradient(90deg, #FDB80D, #FFE082);
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #FDB80D 0%, #fff 50%, #FDB80D 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.bento-highlight {
+  background: linear-gradient(135deg, rgba(253, 184, 13, 0.08) 0%, rgba(241, 137, 12, 0.05) 50%, rgba(92, 37, 129, 0.06) 100%);
+}
+
+.confetti-dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
 }

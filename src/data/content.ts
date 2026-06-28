@@ -15,8 +15,8 @@ export const NAV_LINKS = [
 
 export const HERO = {
   tag: SLOGAN,
-  headline: 'Experiencias que inspiran',
-  headlineHighlight: 'alegría e integración',
+  headline: 'Hacemos que tu evento sea',
+  headlineHighlight: 'inolvidable',
   subheadline:
     'Diseñamos, organizamos y desarrollamos animación, recreación y eventos innovadores, seguros y personalizados para personas, empresas e instituciones.',
   cta: 'Cotizar por WhatsApp',
@@ -34,7 +34,13 @@ export const HERO = {
 export const ABOUT = {
   headline: 'Quiénes somos',
   description:
-    'En AlegrArte creemos que cada celebración es una oportunidad para crear recuerdos imborrables.',
+    'Somos un equipo apasionado por transformar cada celebración en una experiencia única, donde la diversión, la integración y la felicidad son las protagonistas.',
+  image: 'https://i.postimg.cc/QxBqX1j4/eventos.jpg',
+  highlights: [
+    { value: '500+', label: 'Eventos realizados' },
+    { value: '10+', label: 'Años de experiencia' },
+    { value: '100%', label: 'Compromiso y calidad' },
+  ],
   mission: {
     title: 'Misión',
     text: 'En AlegrArte nos dedicamos a diseñar, organizar y desarrollar experiencias de animación, recreación y eventos que inspiren alegría, integración y bienestar. Brindamos un servicio innovador, seguro y personalizado para personas, empresas e instituciones, a través de un equipo humano comprometido, creativo y altamente capacitado, garantizando momentos memorables que superen las expectativas de nuestros clientes y contribuyan al fortalecimiento de los vínculos familiares, sociales y organizacionales.',

@@ -6,7 +6,7 @@ import { Button } from './ui/shared'
 function NavLogo({ light }: { light: boolean }) {
   return (
     <a href="#" className="group flex items-center gap-2.5 font-display text-xl font-bold tracking-tight">
-      <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-yellow to-accent text-base shadow-md transition-transform group-hover:scale-105">
+      <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-yellow to-accent text-base shadow-md shadow-yellow/25 transition-transform group-hover:scale-110 group-hover:rotate-3">
         🎉
       </span>
       <span className={light ? 'text-white' : 'text-text'}>
@@ -32,20 +32,20 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'border-b border-border/80 bg-surface/90 shadow-sm backdrop-blur-xl'
-          : 'bg-gradient-to-b from-brand-dark/40 to-transparent'
+          ? 'border-b border-border/80 bg-surface/92 shadow-md shadow-brand/5 backdrop-blur-xl'
+          : 'bg-gradient-to-b from-brand-dark/50 to-transparent'
       }`}
     >
       <div className="container-main flex h-[4.25rem] items-center justify-between lg:h-[4.75rem]">
         <NavLogo light={light} />
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className={`text-sm font-medium transition-colors ${
-                light ? 'text-white/75 hover:text-brand-yellow' : 'text-muted hover:text-brand'
+              className={`relative rounded-xl px-4 py-2 text-sm font-medium transition-colors ${
+                light ? 'text-white/80 hover:bg-white/10 hover:text-brand-yellow' : 'text-muted hover:bg-brand/5 hover:text-brand'
               }`}
             >
               {l.label}
@@ -58,7 +58,7 @@ export function Header() {
         </Button>
 
         <button
-          className={`rounded-xl p-2 lg:hidden ${light ? 'text-white' : 'text-text'}`}
+          className={`rounded-xl p-2 transition-colors lg:hidden ${light ? 'text-white hover:bg-white/10' : 'text-text hover:bg-bg'}`}
           onClick={() => setOpen(!open)}
           aria-label="Menú"
         >

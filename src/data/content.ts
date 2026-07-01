@@ -38,7 +38,7 @@ export const ABOUT = {
   },
   vision: {
     title: 'Visión',
-    text: 'Para el año 2080, AlegrArte será reconocida como una de las empresas líderes en animación, recreación y organización de eventos en Colombia, destacándose por la excelencia en el servicio, la innovación constante, el profesionalismo de su equipo y la creación de experiencias únicas que generen felicidad, confianza y valor para nuestros clientes, consolidando una marca referente en el sector del entretenimiento y la recreación.',
+    text: 'Para el año 2030, AlegrArte será reconocida como una de las empresas líderes en animación, recreación y organización de eventos en Colombia, destacándose por la excelencia en el servicio, la innovación constante, el profesionalismo de su equipo y la creación de experiencias únicas que generen felicidad, confianza y valor para nuestros clientes, consolidando una marca referente en el sector del entretenimiento y la recreación.',
   },
   philosophy: {
     title: 'Filosofía empresarial',
